@@ -33,6 +33,16 @@ class PagesController extends Controller
      */
     public function search()
     {
-        return view('pages.search-debt');
+        return view('pages.debt-search');
+    }
+
+    /**
+     * Show the application's debt search page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        return view('pages.debts-show');
     }
 }
