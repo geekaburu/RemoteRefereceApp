@@ -19,10 +19,23 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->email,
-        'national_id' =>$faker->unique()->randomNumber,
-        'mobile_number'=>substr($faker->unique()->e164PhoneNumber, -12),
+        'username' => $faker->unique()->firstName($gender = null|'male'|'female'),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+
+
+// Create a new profile
+$factory->define(App\Profile::class, function (Faker\Generator $faker) {
+    static $password;
+    return [
+        'name' => $faker->name,
+        'email' => $faker->unique()->email,
+        'national_id' =>$faker->unique()->randomNumber,
+        'mobile_number'=>substr($faker->unique()->e164PhoneNumber, -12),
+        'city' => $faker->city,
+        'country' => $faker->country
     ];
 });
 

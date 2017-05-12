@@ -15,13 +15,12 @@ class UsersTableSeeder extends Seeder
         App\User::create([
             'name' => 'Test User',
 	        'email' => 'test@amprest.co.ke',
-	        'national_id' =>'32309612',
-	        'mobile_number'=>'+254727467877',
+            'username' => 'test',
 	        'password' => bcrypt('123456'),
 	        'remember_token' => str_random(10),
         ]);
 
     	// Create other user records
-        factory(App\User::class, 49)->create();
+        factory(App\User::class, 4)->create();
     }
 }

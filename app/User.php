@@ -7,14 +7,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-
-    /**
-     * The table associated with this model.
-     *
-     * @var string
-     */
-    protected $table = 'tbl_profiles';
-
     use Notifiable;
 
     /**
@@ -23,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email','national_id','mobile_number','password',
+        'name', 'email','username','password',
     ];
 
     /**
@@ -35,12 +27,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    
+
     /**
      * Get the debts for the user.
      */
     public function debts()
     {
-        return $this->hasMany(Debt::class);
+        return $this->hasMany(Profile::class);
     }
 }

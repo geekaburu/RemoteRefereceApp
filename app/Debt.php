@@ -23,11 +23,11 @@ class Debt extends Model
     ];
 
     /**
-     * Get the user that owns debts
+     * Get the profile that owns debts
      *
      */
-    public function user()
+    public function profile()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Profile::class);
     }
 }

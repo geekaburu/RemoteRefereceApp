@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Return the application's home page
+Route::get('/', 'PagesController@index')->name('app.home');
+// Return the application's debts search page
+Route::get('/search/debts', 'PagesController@search')->name('app.search');
+
+
+// Profiles resource route group
+Route::resource('profiles', ProfilesController::class);
