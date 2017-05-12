@@ -16,7 +16,7 @@ Auth::routes();
 // Return the application's home page
 Route::get('/', 'PagesController@index')->name('app.home');
 // Return the application's debts search page
-Route::get('/search/debts', 'PagesController@search')->name('app.debts.search');
+Route::get('/search/debts', 'PagesController@search')->name('app.debt.search');
 // Return the application's debts search page
 Route::get('/show/debts', 'PagesController@show')->name('app.debts.show');
 

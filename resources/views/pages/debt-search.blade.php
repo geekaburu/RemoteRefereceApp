@@ -3,6 +3,13 @@
 
 @section('content')
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis est soluta vitae temporibus quas nisi, velit, error, earum facere praesentium dicta provident hic veniam. Voluptas sequi, adipisci ab error ipsa.</p>	
+	<h3 class="text-center">Customer Information</h3>
+
+	<!-- Form to search customer information -->	
+	{!! Form::open(['url' => '#', 'class'=>'col-xs-12']) !!}
+
+		<input type="text" class="form-control" name="search" placeholder="Search Customer" required>
+
+	{!! Form::close() !!}
 
 @endsection
