@@ -15,14 +15,13 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('tbl_profiles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('national_id')->unique();
             $table->string('mobile_number')->unique();
             $table->string('city');
             $table->string('country');
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

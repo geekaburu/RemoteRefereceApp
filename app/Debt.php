@@ -19,7 +19,7 @@ class Debt extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'transaction_id','transaction_amount','transaction_date',
+        'profile_id', 'transaction_id','transaction_amount','transaction_date','transaction_days',
     ];
 
     /**

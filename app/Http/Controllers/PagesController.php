@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -11,7 +12,7 @@ class PagesController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Profile $profile)
     {
         $this->middleware('auth');
     }
@@ -34,15 +35,5 @@ class PagesController extends Controller
     public function search()
     {
         return view('pages.debt-search');
-    }
-
-    /**
-     * Show the application's debt search page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        return view('pages.debts-show');
     }
 }

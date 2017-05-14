@@ -2,83 +2,61 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
+
+use Validator;
+use Auth;
 use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Set the protected variable for the profile object
      *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    protected $profile;
+
+    /**
+     * Initialize the controller with its default attributes
+     *
+     */
+    public function __construct(Profile $profile)
     {
-        //
+        // Set the profile
+        $this->profile = $profile;
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the models that match the query.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function search(Request $request)
     {
-        //
+          // Call the validator
+        $this->validator = Validator::make($request->all(), [
+            'search' => 'required|min:6|numeric',
+        ]);
+
+        // Validate the user input
+        if ($this->validator->fails()) {
+            return response([
+                'errors' => $this->validator->errors()->getMessages(),
+                'code' => 422
+             ]);
+        }
+
+        //Get the current user profile model instance
+        $result =Auth::user()
+                    ->profile()
+                    ->where($request->criteria, 'like', '%'.$request->search.'%')
+                    ->first();
+
+        // Return the result
+        return response([
+            'customer' => $result,
+            'debts' =>$result?$result->debts()->get():'',
+        ], 200);        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

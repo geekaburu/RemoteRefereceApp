@@ -11,6 +11,8 @@
         <!-- Application's NavBar code -->
         @include('partials._navbar')
 
+        @include('partials._messages')
+
     	<!-- main dynamic content -->
     	@yield('content')    
 

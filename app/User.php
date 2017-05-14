@@ -29,10 +29,18 @@ class User extends Authenticatable
 
 
     /**
-     * Get the debts for the user.
+     * Get the profiles for the user.
      */
-    public function debts()
+    public function profile()
     {
         return $this->hasMany(Profile::class);
+    }
+
+    /**
+     * Get the profiles for the user.
+    */
+    public function debts()
+    {
+        return $this->hasMany(Debt::class);
     }
 }

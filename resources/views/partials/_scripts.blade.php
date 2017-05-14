@@ -7,6 +7,9 @@
 <!-- Latest compiled and minified Bootstrap JavaScript -->
 <script type = "text/javascript" src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}" ></script>
 
+<!-- Group of JS Functions -->
+<script type = "text/javascript" src="{{ asset('js/functions.js') }}" ></script>
+
 {{-- Custom JS --}}
 @yield('CustomScripts')
 

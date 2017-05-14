@@ -19,7 +19,7 @@ class Profile extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email','national_id','mobile_number','city','country',
+        'user_id','name', 'email','national_id','mobile_number','city','country',
     ];
 
     /**
@@ -29,5 +29,13 @@ class Profile extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the debts for the user.
+     */
+    public function debts()
+    {
+        return $this->hasMany(Debt::class);
     }
 }

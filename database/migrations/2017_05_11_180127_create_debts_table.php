@@ -17,9 +17,11 @@ class CreateDebtsTable extends Migration
         Schema::create('tbl_due_listing', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('profile_id');
             $table->integer('transaction_id');
             $table->string('transaction_amount');
             $table->dateTime('transaction_date');
+            $table->integer('transaction_days');
             $table->timestamps();
         });
     }
