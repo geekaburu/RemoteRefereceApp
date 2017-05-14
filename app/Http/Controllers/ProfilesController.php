@@ -27,6 +27,16 @@ class ProfilesController extends Controller
     }
 
     /**
+     * Show the application's debt search page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function searchIndex()
+    {
+        return view('debts.search');
+    }
+
+    /**
      * Display a listing of the models that match the query.
      *
      * @return \Illuminate\Http\Response

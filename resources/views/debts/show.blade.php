@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('title','Home')
 
-@section('content')
+@section('app-body')
 
 	<h3 class="text-center">Customer Debt Information</h3>
 

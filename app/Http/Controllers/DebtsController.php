@@ -36,7 +36,7 @@ class DebtsController extends Controller
                     ->debts()
                     ->get();
 
-        return view('pages.debts-show', compact('debts'));
+        return view('debts.show', compact('debts'));
     }
 
 }

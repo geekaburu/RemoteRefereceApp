@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('title','Home')
 
-@section('content')
+@section('app-body')
 
 	<h3 class="text-center">Seach Customer Debt Information</h3>
 
@@ -18,7 +18,7 @@
 			</div>
 		</div>
 
-		<input type="text" class="form-control" name="search" placeholder="Search Customer">
+		<input type="text" class="form-control" name="search" placeholder="Search Customer" required="">
 
 		<button style="margin-top: 20px;" class="btn btn-primary" type="submit">Search</button>
 

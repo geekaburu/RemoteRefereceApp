@@ -15,13 +15,12 @@ Auth::routes();
 
 // Return the application's home page
 Route::get('/', 'PagesController@index')->name('app.home');
-// Return the application's debts search page
-Route::get('/search/debts', 'PagesController@search')->name('app.debt.search');
-
 
 // Profiles resource route group
+Route::get('/search/debts', 'ProfilesController@searchIndex')->name('app.debt.search');
 Route::post('profiles/search', 'ProfilesController@search')->name('profiles.search');
 Route::resource('profiles', ProfilesController::Class);
 
 // Debt resource route group
 Route::resource('debts', DebtsController::Class);
+

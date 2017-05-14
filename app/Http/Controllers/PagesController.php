@@ -27,13 +27,4 @@ class PagesController extends Controller
         return view('pages.home');
     }
 
-    /**
-     * Show the application's debt search page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function search()
-    {
-        return view('pages.debt-search');
-    }
 }

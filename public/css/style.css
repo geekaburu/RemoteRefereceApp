@@ -1,0 +1,43 @@
+.grey-darken-3{
+	background-color: #37474f;
+}
+
+.grey-darken-4{
+	background-color: #263238;
+}
+
+.navbar{
+	border-radius: 0;
+	border: 0 !important;
+	margin: 0;
+}
+
+.navbar .navbar-brand {
+	color:#fff;
+}
+
+.list-group .list-group-item{
+	border-radius: 0;
+	box-shadow: 1px 1px 1px black;
+	height: 40px;
+}
+
+.list-group .active{
+	background-color: #263238;
+	border:2px solid white;
+}
+
+.list-group i{
+	font-size: 14pt;
+}
+
+.panel{
+	height: 200px;
+	padding: 20px;
+	border-radius: 0;
+	color: #fff;
+}
+
+.panel i{
+	color: #263238;
+}
