@@ -7,6 +7,8 @@
 <!-- Latest compiled and minified Bootstrap CSS -->
 <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" >
 
+<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" >
+
 <!-- External CSS file -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 

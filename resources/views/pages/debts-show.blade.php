@@ -5,66 +5,42 @@
 
 	<h3 class="text-center">Customer Debt Information</h3>
 
-	<table id="debt-table" class="table table-striped" cellspacing="0" width="100%">
+    <div class="col-xs-10 col-xs-offset-1">
 
-        <thead>
-            <tr>
-                <th>Customer</th>
-                <th>Transaction Date</th>
-                <th>Transaction amount</th>
-                <th>Due Days</th>
+    	<table id="debt-due" class="table table-striped table-bordered" cellspacing="0" width="100%">
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tiger</td>
-                <td>Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Transaction Date</th>
+                    <th>Transaction amount</th>
+                    <th>Due Days</th>
 
-            </tr>
-            <tr>
-                <td>Garrett</td>
-                <td>Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($debts as $debt)
+                    <tr>
+                        <td>{{$debt->profile->name}}</td>
+                        <td>{{$debt->transaction_date}}</td>
+                        <td>{{$debt->transaction_amount}}</td>
+                        <td>{{$debt->transaction_days}}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+    	</table>
 
-            </tr>
-            <tr>
-                <td>Ashton</td>
-                <td>Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-            </tr>
-            <tr>
-                <td>Cedric</td>
-                <td>Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-
-            </tr>
-            <tr>
-                <td>Airi</td>
-                <td>Satou</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-
-            </tr>
-        </tbody>
-	</table>
+    </div>
 
 @endsection
 
-@section('customScripts')
+@section('CustomScripts')
 	 
 	 <script>
 	 	
 	 	$(document).ready(function() {
-		    $('#debt-table').DataTable( {
-		        "scrollX": true
-		    } );
-		} );
+		    $('#debt-due').DataTable();
+		});
 
 	 </script>
 
