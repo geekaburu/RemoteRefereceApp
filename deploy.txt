@@ -71,7 +71,7 @@ Instructions
 	DB_USERNAME=
 	DB_PASSWORD=
 
-11. cd to *folder_name* and run "composer update" on the ssh terminal to update all package information 
+11. cd to *folder_name* and run "composer update" on the ssh terminal to update all package information (IMPORTANT)
 	
 
 
