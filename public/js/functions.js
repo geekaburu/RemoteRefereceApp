@@ -1,8 +1,10 @@
+// Adjust height of application sections
 var adjustHeight = function(){
 	$('.main-bar').css('min-height',$(window).height());
 	$('.side-bar').height($('.main-bar').height());
 }
 
+// Display errors on screen
 var displayErrors = function(data){
 	var errorText = '';
 	for (x in data){
@@ -11,6 +13,7 @@ var displayErrors = function(data){
 	return errorText;
 }
 
+// Display query results
 var displayResult = function(response,elements){
 	elements = elements || 0;
 	if(elements){
