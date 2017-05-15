@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 
 class PagesController extends Controller
 {
@@ -26,5 +28,4 @@ class PagesController extends Controller
     {
         return view('pages.home');
     }
-
 }

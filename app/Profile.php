@@ -11,7 +11,7 @@ class Profile extends Model
      *
      * @var string
      */
-    protected $table = 'tbl_profiles';
+    protected $table = 'tbl_profiles_1';
 
     /**
      * The attributes that are mass assignable.

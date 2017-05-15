@@ -1,0 +1,77 @@
+---------------------------------------------------------------------
+Deployment guide
+---------------------------------------------------------------------
+Language :php
+Framework:Laravel
+Version  :5.4
+
+Comments: To view this project without having to deploy, go to https://
+		  Due to a database migration error caused by network hitches, I renamed
+		  1. tbl_due_listing to tbl_due_listing_1
+		  2. tbl_profiles to tbl_profiles_1
+
+Requirements
+------------
+PHP >= 5.6.4
+OpenSSL PHP Extension
+PDO PHP Extension
+Mbstring PHP Extension
+Tokenizer PHP Extension
+XML PHP Extension
+
+Instructions
+------------
+1. Using ssh, connect to your linux based ssh service.
+2. At the root of the account, install composer (php composer-setup.php --install-dir=bin)
+3. Install laravel using composer (composer global require "laravel/installer")
+4. At the root directory, create a folder to hold the project
+5. Copy github contents into this folder
+6. Copy the contents of *folder_name*/public into public_html
+7. Open index.php and modify these 2 lines
+	
+	require __DIR__.'/../bootstrap/autoload.php';
+	to
+	require __DIR__.'/../*folder_namename*/bootstrap/autoload.php';
+
+	and 
+
+	$app = require_once __DIR__.'/../bootstrap/app.php';
+	to
+	$app = require_once __DIR__.'/../*folder_name*/bootstrap/app.php';
+
+8. Open the htaccess file and replace its contects with
+	
+	<IfModule mod_rewrite.c>
+	    <IfModule mod_negotiation.c>
+	        Options -MultiViews
+	    </IfModule>
+
+	    RewriteEngine On
+
+	    # Redirect Trailing Slashes If Not A Folder...
+	    RewriteCond %{REQUEST_FILENAME} !-d
+	    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+	    # Handle Front Controller...
+	    RewriteCond %{REQUEST_FILENAME} !-d
+	    RewriteCond %{REQUEST_FILENAME} !-f
+	    RewriteRule ^ index.php [L]
+
+	    # Handle Authorization Header
+	    RewriteCond %{HTTP:Authorization} .
+	    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+	</IfModule>
+
+9.  Navigate to *folder_name* and open the .env file
+10. Insert the database details here
+	DB_CONNECTION=
+	DB_HOST=
+	DB_PORT=
+	DB_DATABASE=
+	DB_USERNAME=
+	DB_PASSWORD=
+
+11. cd to *folder_name* and run "composer update" on the ssh terminal to update all package information 
+	
+
+

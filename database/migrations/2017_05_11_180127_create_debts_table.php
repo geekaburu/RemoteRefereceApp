@@ -14,7 +14,7 @@ class CreateDebtsTable extends Migration
     public function up()
     {
         // Create tbl_due_listing
-        Schema::create('tbl_due_listing', function (Blueprint $table) {
+        Schema::create('tbl_due_listing_1', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('profile_id');

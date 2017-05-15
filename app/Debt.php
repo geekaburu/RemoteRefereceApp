@@ -11,7 +11,7 @@ class Debt extends Model
      *
      * @var string
      */
-    protected $table = 'tbl_due_listing';
+    protected $table = 'tbl_due_listing_1';
 
     /**
      * The attributes that are mass assignable.
