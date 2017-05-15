@@ -61,3 +61,25 @@ html::-webkit-scrollbar-thumb
 	margin-bottom: 40px;
 	padding: 30px;
 }
+
+.side-bar {
+	width:5%;
+	margin: 0;
+	padding: 0;
+	width:5%;"
+}
+
+.main-bar {
+	width:95%;
+}
+
+@media only screen and (max-width: 768px) 
+{
+	.side-bar {
+		width:0%;
+	}
+
+	.main-bar {
+		width:100%;
+	}	
+}

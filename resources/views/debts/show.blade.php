@@ -9,14 +9,14 @@
         <a href="{{ route('debts.download') }}" class="btn btn-primary">Click to Download</a>        
     </div>
 
-    <div class="col-xs-10 col-xs-offset-1">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
 
     	<table id="debt-due" class="table table-striped table-bordered" cellspacing="0" width="100%">
 
             <thead>
                 <tr>
-                    <th>Customer</th>
                     <th>Transaction Date</th>
+                    <th>Customer</th>
                     <th>Transaction amount</th>
                     <th>Due Days</th>
 
@@ -25,9 +25,9 @@
             <tbody>
                 @foreach($debts as $debt)
                     <tr>
+                        <td>{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$debt->transaction_date)->format('Y-m-d')}}</td>
                         <td>{{$debt->profile->name}}</td>
-                        <td>{{$debt->transaction_date}}</td>
-                        <td>{{$debt->transaction_amount}}</td>
+                        <td>{{number_format((float)$debt->transaction_amount, 2, '.', '')}}</td>
                         <td>{{$debt->transaction_days}}</td>
                     </tr>
                 @endforeach
@@ -43,7 +43,9 @@
 	 <script>
 	 	
 	 	$(document).ready(function() {
-		    $('#debt-due').DataTable();
+		    $('#debt-due').DataTable({
+                "scrollX": true
+            });
 		});
 
 	 </script>

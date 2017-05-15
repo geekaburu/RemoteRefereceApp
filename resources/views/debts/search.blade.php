@@ -6,7 +6,7 @@
 	<h3 style="margin-top: 60px;" class="header text-center">Seach Customer Debt Information</h3>
 
 	<!-- Form to search customer information -->	
-	{!! Form::open(['id'=>'search','class' => 'col-xs-6 col-xs-offset-3']) !!}
+	{!! Form::open(['id'=>'search','class' => 'col-xs-12 col-sm-6 col-sm-offset-3']) !!}
 
 		<div style="margin-bottom: 30px;" class="text-center col-xs-12">
 			<div class="radio">
@@ -26,7 +26,7 @@
 
 	{!! Form::close() !!}
 
-	<div class="col-xs-10 col-xs-offset-1 result well">
+	<div class="col-xs-12 col-sm-10 col-sm-offset-1 result well">
 		
 		<h3 style="margin-top: 20%;" class="text-center">Your result will be shown here</h3>
 

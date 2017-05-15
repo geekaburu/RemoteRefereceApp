@@ -2,7 +2,7 @@
 
 @section('content')
 	
-	<div style="margin: 0; padding: 0; width:5%;" class="side-bar col-xs-1 grey-darken-3">
+	<div class="hidden-xs hidden-sm side-bar col-xs-1 grey-darken-3">
 
 		<ul class="list-group">
 		  	<li class="list-group-item text-center"><a href="{{ route('app.home') }}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
@@ -13,7 +13,7 @@
 
 	</div>	
 
-	<div style="width:95%;" class="main-bar col-xs-11">
+	<div class="main-bar col-xs-11">
 		@yield('app-body')
 	</div>	
 
