@@ -3,7 +3,11 @@
 
 @section('app-body')
 
-	<h3 class="text-center">Customer Debt Information</h3>
+	<h3 style="margin-top: 60px;" class="header text-center">Customer Debt Information</h3>
+
+    <div style="margin-top: 30px; margin-bottom: 30px;" class="col-xs-12 text-center">
+        <a href="{{ route('debts.download') }}" class="btn btn-primary">Click to Download</a>        
+    </div>
 
     <div class="col-xs-10 col-xs-offset-1">
 

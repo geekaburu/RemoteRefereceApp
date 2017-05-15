@@ -1,5 +1,24 @@
+html, body 
+{
+    color: #636b6f;
+    font-family: 'Quicksand', sans-serif;
+  	font-weight: 400;
+    margin: 0;
+    background-color: #eee;
+}
+
+html::-webkit-scrollbar 
+{
+    width: 0.6em;
+}
+
+html::-webkit-scrollbar-thumb 
+{
+  background-color: #37474f;
+  outline: 1px solid transparent;
+}
 .grey-darken-3{
-	background-color: #37474f;
+	background-color: #263238;
 }
 
 .grey-darken-4{
@@ -12,32 +31,33 @@
 	margin: 0;
 }
 
+.navbar-nav li a i{
+	color: #fff;
+}
+
 .navbar .navbar-brand {
 	color:#fff;
 }
 
 .list-group .list-group-item{
-	border-radius: 0;
-	box-shadow: 1px 1px 1px black;
-	height: 40px;
+	background-color: transparent;
+	border:0;
 }
 
-.list-group .active{
-	background-color: #263238;
-	border:2px solid white;
-}
-
-.list-group i{
+.list-group .list-group-item i{
 	font-size: 14pt;
-}
-
-.panel{
-	height: 200px;
-	padding: 20px;
-	border-radius: 0;
 	color: #fff;
+	margin-top: 20px;
 }
 
-.panel i{
-	color: #263238;
+.header{
+	margin-top: 50px;
+	font-weight: 600;
+}
+
+.result{
+	min-height: 500px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding: 30px;
 }

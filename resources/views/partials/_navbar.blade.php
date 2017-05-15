@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="#">@if(Auth::check()){{Auth::user()->name}}@else<p>Welcome</p>@endif</a>               
+        <a style="font-weight: 800;" class="navbar-brand" href="#">@if(Auth::check()){{Auth::user()->name}}@else<p>Welcome</p>@endif</a>               
 
     </div>
 
@@ -16,10 +16,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
             @if(Auth::check())
+                <li><a href="{{ route('app.home') }}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                <li><a href="{{ route('app.debt.search') }}"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                <li><a href="{{ route('debts.index') }}"><i class="fa fa-download" aria-hidden="true"></i></a></li>
+                <li><a href=""><i class="fa fa-cogs" aria-hidden="true"></i></a></li>           
                 <li style="padding:7px;">
                     <!-- Form to search customer information -->  
                     {!! Form::open(['url'=>'/logout']) !!}
-                        <button class="btn" type="submit">Log out</button>
+                        <button style="background-color: transparent; color: #fff;" class="btn" type="submit">Logout</button>
                     {!! Form::close() !!}
                 </li>
             @endif

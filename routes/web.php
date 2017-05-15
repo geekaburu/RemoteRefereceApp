@@ -22,5 +22,8 @@ Route::post('profiles/search', 'ProfilesController@search')->name('profiles.sear
 Route::resource('profiles', ProfilesController::Class);
 
 // Debt resource route group
-Route::resource('debts', DebtsController::Class);
+Route::get('debts', 'DebtsController@index')->name('debts.index');
+Route::get('debts/download', 'DebtsController@download')->name('debts.download');
+
+
 

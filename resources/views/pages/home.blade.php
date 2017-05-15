@@ -2,25 +2,15 @@
 @section('title','Home')
 
 @section('app-body')
-	
-	<h2 style="margin: 50px; font-weight: 700;" class="text-center">Debt Remote Reference App</h2>
 
-	<div class="text-center col-xs-6">
+	<h1 class="text-center" style="font-weight: 500; margin-top: 10%;">Debt Remote Reference App</h1>
+	<p class="text-center">Look up your customers' debt status remotely</p>
 
-		<a href="{{ route('app.debt.search') }}">
-			<i class="fa-5x fa fa-search" aria-hidden="true"></i>
-			<p style="font-weight: 700; font-size: 13pt; margin-top: 15px;">Search Customer Debt Information</p>
-		</a>	
+	<h3 class="text-center" style="font-weight: 500; margin-top: 5%;">What would you like to do?</h3>
 
-	</div>	
-
-	<div class="text-center col-xs-6">
-
-		<a href="{{ route('debts.index') }}">
-			<i class="fa-5x fa fa-download" aria-hidden="true"></i>
-			<p style="font-weight: 700; font-size: 13pt; margin-top: 15px;">Download Customer Debt Information</p>
-		</a>	
-
+	<div style="margin-top: 60px;" class="text-center col-xs-8 col-xs-offset-2">
+		<a class="btn btn-primary" href="{{ route('app.debt.search') }}">Search Customer Information</a>
+		<a class="btn btn-primary" href="{{ route('debts.index') }}">Download Debt Information</a>
 	</div>	
 
 @endsection

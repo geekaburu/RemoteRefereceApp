@@ -3,12 +3,12 @@
 
 @section('app-body')
 
-	<h3 class="text-center">Seach Customer Debt Information</h3>
+	<h3 style="margin-top: 60px;" class="header text-center">Seach Customer Debt Information</h3>
 
 	<!-- Form to search customer information -->	
-	{!! Form::open(['id'=>'search','class' => 'col-xs-12']) !!}
+	{!! Form::open(['id'=>'search','class' => 'col-xs-6 col-xs-offset-3']) !!}
 
-		<div class="col-xs-12">
+		<div style="margin-bottom: 30px;" class="text-center col-xs-12">
 			<div class="radio">
 	    		<label><input type="radio" name="criteria" value="national_id" checked>Search by National ID</label>				
 			</div>
@@ -19,12 +19,18 @@
 		</div>
 
 		<input type="text" class="form-control" name="search" placeholder="Search Customer" required="">
-
-		<button style="margin-top: 20px;" class="btn btn-primary" type="submit">Search</button>
+		
+		<div class="col-xs-12 text-center">	
+			<button style="margin-top: 20px;" class="text-center btn btn-primary" type="submit">Search Customer</button>
+		</div>
 
 	{!! Form::close() !!}
 
-	<div class="col-xs-12 result"></div>
+	<div class="col-xs-10 col-xs-offset-1 result well">
+		
+		<h3 style="margin-top: 20%;" class="text-center">Your result will be shown here</h3>
+
+	</div>
 
 @endsection
 

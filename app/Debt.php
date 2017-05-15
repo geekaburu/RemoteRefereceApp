@@ -30,4 +30,5 @@ class Debt extends Model
     {
         return $this->belongsTo(Profile::class);
     }
+
 }

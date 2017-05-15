@@ -14,6 +14,9 @@
 <!-- Group of JS Functions -->
 <script type = "text/javascript" src="{{ asset('js/functions.js') }}" ></script>
 
+<!-- External Js file-->
+<script type = "text/javascript" src="{{ asset('js/scripts.js') }}" ></script>
+
 {{-- Custom JS --}}
 @yield('CustomScripts')
 

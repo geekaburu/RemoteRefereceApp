@@ -4,10 +4,9 @@
     <head>	
         <!-- content of the head section -->
         @include('partials._head')
-
     </head>
     <body>
-    
+        
         <!-- Application's NavBar code -->
         @include('partials._navbar')
 
