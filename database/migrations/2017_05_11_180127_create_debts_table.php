@@ -34,6 +34,6 @@ class CreateDebtsTable extends Migration
     public function down()
     {
         // Drop table due listing
-        Schema::dropIfExists('tbl_due_listing');
+        Schema::dropIfExists('tbl_due_listing_1');
     }
 }
