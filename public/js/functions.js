@@ -1,5 +1,6 @@
 // Adjust height of application sections
 var adjustHeight = function(){
+	$('.main-bar').css('min-height',$(window).height());
 	$('.side-bar').height($('.main-bar').height());
 }
 
