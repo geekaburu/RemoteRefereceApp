@@ -16,11 +16,9 @@ class PagesController extends Controller
      *
      * @return void
      */
-    public function __construct(Profile $profile, Debt $debt)
+    public function __construct()
     {
-        // $this->middleware('auth');
-        $this->profile = $profile;
-        $this->debt = $debt;
+        $this->middleware('auth');
     }
 
     /**
@@ -31,8 +29,6 @@ class PagesController extends Controller
     public function index()
     {
         return view('pages.home');
-        // // return $this->profile->all();
-        // return $this->debt->all();
     }
 
 }

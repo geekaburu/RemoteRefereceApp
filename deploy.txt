@@ -8,19 +8,11 @@ Version  :5.4
 Comments: 	To view this project without having to deploy, go to 
 
 			http://remote-reference-app.herokuapp.com
-			-----------------------------------------
-
-		  	Due to a database migration error caused by network hitches, I renamed
-		  	1. tbl_due_listing to tbl_due_listing_1
-		  	2. tbl_profiles to tbl_profiles_1
 
 --------------------------------------------------------------------
 
 Test Credentials:	username -->test  
 					password -->123456
-
-Search paramenters: ID --> 987654321
-					Mobile Number --> 0712345678
 
 --------------------------------------------------------------------
 
