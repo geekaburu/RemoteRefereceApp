@@ -11,7 +11,7 @@ class Profile extends Model
      *
      * @var string
      */
-    protected $table = 'tbl_profiles_1';
+    protected $table = 'tbl_profiles';
 
     /**
      * The attributes that are mass assignable.
@@ -19,23 +19,6 @@ class Profile extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id','name', 'email','national_id','mobile_number','city','country',
+        'national_id','mobile_number','fully_cleared','date_cleared', 'batch_numbers','clearing_mpesa_trans_id',
     ];
-
-    /**
-     * Get the user that owns profiles
-     *
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Get the debts for the user.
-     */
-    public function debts()
-    {
-        return $this->hasMany(Debt::class);
-    }
 }

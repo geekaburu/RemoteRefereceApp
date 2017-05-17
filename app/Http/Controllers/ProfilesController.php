@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Profile;
 
 use Validator;
-use Auth;
 use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
@@ -56,17 +55,11 @@ class ProfilesController extends Controller
              ]);
         }
 
-        //Get the current user profile model instance
-        $result =Auth::user()
-                    ->profile()
-                    ->where($request->criteria, 'like', '%'.$request->search.'%')
-                    ->first();
-
-        // Return the result
-        return response([
-            'customer' => $result,
-            'debts' =>$result?$result->debts()->get():'',
-        ], 200);        
+        //return the current profile model instance
+        return response(
+                $this->profile
+                        ->where($request->criteria, 'like', '%'.$request->search.'%')
+                        ->first(), 200);        
     }
 
 }

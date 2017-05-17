@@ -12,23 +12,30 @@
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
 
     	<table id="debt-due" class="table table-striped table-bordered" cellspacing="0" width="100%">
-
             <thead>
                 <tr>
-                    <th>Transaction Date</th>
-                    <th>Customer</th>
-                    <th>Transaction amount</th>
-                    <th>Due Days</th>
+                    <th>Customer Id</th>
+                    <th>Customer Name</th>
+                    <th>Customer Account No</th>
+                    <th>Customer Number</th>
+                    <th>Loan Amount</th>
+                    <th>Balance</th>
+                    <th>Issue Date</th>
+                    <th>Due Date</th>
 
                 </tr>
             </thead>
             <tbody>
                 @foreach($debts as $debt)
                     <tr>
-                        <td>{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$debt->transaction_date)->format('Y-m-d')}}</td>
-                        <td>{{$debt->profile->name}}</td>
-                        <td>{{number_format((float)$debt->transaction_amount, 2, '.', '')}}</td>
-                        <td>{{$debt->transaction_days}}</td>
+                        <td>{{$debt->cust_id}}</td>
+                        <td>{{$debt->cust_name}}</td>
+                        <td>{{$debt->cust_acno}}</td>
+                        <td>(+254) {{$debt->cust_mobile_number}}</td>
+                        <td>{{number_format($debt->loan_amount,2)}}</td>
+                        <td>{{number_format($debt->loan_balance,2)}}</td>
+                        <td>{{\Carbon\Carbon::parse($debt->loan_issue_date)->format('d-m-y')}}</td>
+                        <td>{{\Carbon\Carbon::parse($debt->loan_due_date)->format('d-m-y')}}</td>
                     </tr>
                 @endforeach
             </tbody>

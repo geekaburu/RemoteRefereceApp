@@ -11,7 +11,7 @@ class Debt extends Model
      *
      * @var string
      */
-    protected $table = 'tbl_due_listing_1';
+    protected $table = 'tbl_due_listing';
 
     /**
      * The attributes that are mass assignable.
@@ -19,16 +19,7 @@ class Debt extends Model
      * @var array
      */
     protected $fillable = [
-        'profile_id', 'transaction_id','transaction_amount','transaction_date','transaction_days',
+        'cust_name', 'cust_id','cust_acno','loan_amount','loan_balance','loan_issue_date','loan_due_date','cust_mobile_number',
     ];
-
-    /**
-     * Get the profile that owns debts
-     *
-     */
-    public function profile()
-    {
-        return $this->belongsTo(Profile::class);
-    }
 
 }
